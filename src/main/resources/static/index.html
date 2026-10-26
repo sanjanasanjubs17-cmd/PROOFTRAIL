@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PROOFTRAIL — Evidence-first content review</title>
+<style>
+:root{--ink:#17221d;--muted:#66756c;--paper:#f5f7f3;--card:#fff;--line:#dfe6df;--green:#176b4d;--mint:#e2f3e9;--amber:#fff1cf;--red:#fde6e3;--shadow:0 12px 34px rgba(21,44,31,.07)}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif;line-height:1.5}
+header{background:#102a20;color:white;padding:20px max(22px,calc((100% - 1180px)/2));display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:4px solid #b4e3c8}
+.brand{display:flex;gap:12px;align-items:center}.mark{background:#b4e3c8;color:#102a20;border-radius:12px;width:42px;height:42px;display:grid;place-items:center;font-weight:900;font-size:21px}.brand h1{font-size:18px;letter-spacing:2px;margin:0}.brand p{font-size:12px;margin:2px 0 0;color:#c9d8d0}.pill{border:1px solid #648174;border-radius:999px;padding:7px 12px;font-size:12px;color:#d5e9dc}
+main{max-width:1180px;margin:30px auto;padding:0 20px 48px}.hero{display:flex;justify-content:space-between;gap:22px;align-items:end;margin-bottom:22px}.eyebrow{text-transform:uppercase;color:var(--green);font-size:11px;letter-spacing:2px;font-weight:800}.hero h2{font-size:clamp(28px,4vw,42px);line-height:1.08;letter-spacing:-1.3px;margin:7px 0 10px}.hero p{color:var(--muted);max-width:680px;margin:0}.hero-note{background:var(--mint);border-radius:16px;padding:14px 16px;min-width:190px;font-size:13px}.hero-note strong{display:block;font-size:17px;color:var(--green)}
+.layout{display:grid;grid-template-columns: .92fr 1.08fr;gap:20px;align-items:start}.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow);margin-bottom:18px}.panel-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}.panel h3{font-size:17px;margin:0}.step{font-size:11px;font-weight:800;color:var(--green);background:var(--mint);padding:5px 8px;border-radius:7px}
+label{font-size:12px;font-weight:800;display:block;margin:15px 0 7px;color:#31483b}input,textarea{font:inherit;width:100%;border:1px solid #cfd9d1;background:#fbfcfa;border-radius:10px;padding:12px 13px;color:var(--ink);outline:none}textarea{resize:vertical;min-height:110px}textarea:focus,input:focus{border-color:#398667;box-shadow:0 0 0 3px #dff3e8} .hint{font-size:11px;color:var(--muted);margin:6px 0 0}
+button{font:inherit;font-weight:750;cursor:pointer;border:0;border-radius:10px;padding:11px 14px;transition:transform .12s,opacity .12s}button:hover{transform:translateY(-1px)}button:disabled{opacity:.5;cursor:wait}.primary{background:var(--green);color:white;width:100%;margin-top:17px;padding:13px}.secondary{background:#eef3ef;color:#294c3a;border:1px solid #d7e2da}.small{padding:7px 10px;font-size:12px}.sample{font-size:12px;background:transparent;color:var(--green);padding:4px 0;text-decoration:underline}
+.results-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.stats{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.stat{background:#f3f6f3;border:1px solid var(--line);padding:10px 13px;border-radius:12px;min-width:92px}.stat b{display:block;font-size:21px}.stat span{font-size:11px;color:var(--muted)}.finding{border:1px solid var(--line);border-radius:14px;padding:15px;margin-top:12px}.finding.resolved{opacity:.72;background:#f7faf7}.finding-title{display:flex;justify-content:space-between;gap:12px;align-items:start}.status{font-size:10px;letter-spacing:.4px;text-transform:uppercase;font-weight:850;border-radius:999px;padding:5px 8px;white-space:nowrap}.status.supported{background:var(--mint);color:#176b4d}.status.unsupported{background:var(--red);color:#a43b30}.status.review{background:var(--amber);color:#80580c}.statement{font-weight:750;margin:9px 0}.finding p{font-size:12px;margin:7px 0;color:#516157}.finding p strong{color:#2d4336}.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.empty{padding:38px 18px;text-align:center;color:var(--muted);border:1px dashed #cbd8ce;border-radius:14px}.empty .symbol{font-size:30px;margin-bottom:8px}.notice{font-size:11px;color:var(--muted);background:#f6f8f5;border-radius:10px;padding:10px 12px;margin-top:14px}.history-row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:12px}.history-row:last-child{border:0}.footer{font-size:11px;color:var(--muted);text-align:center;margin-top:24px}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#102a20;color:#fff;padding:10px 16px;border-radius:10px;box-shadow:var(--shadow);display:none;z-index:5}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.hero{display:block}.hero-note{margin-top:18px}.panel{padding:17px}header{padding:16px 20px}.pill{display:none}}
+</style>
+</head>
+<body>
+<header><div class="brand"><div class="mark">P</div><div><h1>PROOFTRAIL</h1><p>Evidence-first brand governance</p></div></div><div class="pill">HUMAN-CONTROLLED REVIEW</div></header>
+<main>
+<section class="hero"><div><div class="eyebrow">Brand integrity workspace</div><h2>Every claim needs<br>an evidence trail.</h2><p>Check draft content against approved facts and brand rules. Review the evidence, decide what to do, and keep a record of your decisions.</p></div><div class="hero-note"><strong>Review, don't assume.</strong>Automated findings are signals for a human reviewer, not a guarantee of truth.</div></section>
+<div class="layout">
+<section>
+<div class="panel">
+<div class="panel-head"><h3>1. Approved information</h3><span class="step">SETUP</span></div>
+<label for="facts">Approved brand facts (one per line)</label>
+<textarea id="facts" placeholder="Example: Our bottle is made from 80% recycled aluminum.&#10;Example: Standard delivery takes 3–5 business days.">Our bottle is made from 80% recycled aluminum.
+Standard delivery takes 3–5 business days.
+The product warranty lasts 12 months.
+Our skincare products are fragrance-free.</textarea>
+<p class="hint">Use information your team has verified and approved.</p>
+<label for="guidelines">Guidelines / phrases to flag (one per line)</label>
+<textarea id="guidelines" style="min-height:82px" placeholder="Example: guaranteed results&#10;Example: miracle cure">miracle cure
+guaranteed results</textarea>
+<p class="hint">A phrase is flagged if it appears in the draft, ignoring letter case.</p>
+</div>
+<div class="panel">
+<div class="panel-head"><h3>2. Draft content</h3><span class="step">ANALYZE</span></div>
+<label for="draft">Paste the marketing copy you want to check</label>
+<textarea id="draft" style="min-height:185px" placeholder="Paste your content here...">Our bottle is made from 80% recycled aluminum. We guarantee results with our miracle cure skincare. Our product warranty lasts 12 months. We offer the fastest delivery in the world.</textarea>
+<button class="sample" id="sampleBtn" type="button">↻ Load sample draft</button>
+<button class="primary" id="checkBtn" type="button">Check content →</button>
+<p class="hint">Your text is sent to this app's Java backend for rule-based checking.</p>
+</div>
+</section>
+<section>
+<div class="panel">
+<div class="results-top"><div class="panel-head" style="margin:0"><h3>3. Findings & decisions</h3></div><button class="secondary small" id="exportBtn" type="button">Export review</button></div>
+<div id="stats" class="stats" style="display:none"></div>
+<div id="results"><div class="empty"><div class="symbol">◎</div><strong>Ready to review</strong><div style="font-size:12px;margin-top:5px">Enter your approved facts and draft, then click “Check content”.</div></div></div>
+<div class="notice">Human decision gate: use Accept, Edit, or Dismiss for each finding. Your decisions are saved in this browser on this device.</div>
+</div>
+<div class="panel"><div class="panel-head"><h3>Review history</h3><button class="secondary small" id="clearHistoryBtn" type="button">Clear</button></div><div id="history"><div class="empty">Completed reviews will appear here.</div></div></div>
+</section>
+</div>
+<div class="footer">PROOFTRAIL prototype · Rule-based checks · No automatic publishing · Review findings before making decisions</div>
+</main>
+<div id="toast" class="toast" role="status"></div>
+<script>
+const $ = id => document.getElementById(id);
+let findings = [];
+let latestResponse = null;
+let decisions = {};
+let historyItems = JSON.parse(localStorage.getItem("prooftrail-history") || "[]");
+function toast(message){const t=$("toast");t.textContent=message;t.style.display="block";setTimeout(()=>t.style.display="none",2400);}
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function statusClass(s){return s==="Supported"?"supported":s==="Unsupported"?"unsupported":"review";}
+function loadSample(){ $("draft").value="Our bottle is made from 80% recycled aluminum. We guarantee results with our miracle cure skincare. Our product warranty lasts 12 months. We offer the fastest delivery in the world."; }
+$("sampleBtn").addEventListener("click",loadSample);
+$("checkBtn").addEventListener("click",async()=>{
+ const content=$("draft").value.trim();
+ if(!content){toast("Paste draft content first.");return;}
+ $("checkBtn").disabled=true;$("checkBtn").textContent="Checking…";
+ try{
+  const res=await fetch("/api/check",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({approvedFacts:$("facts").value,guidelines:$("guidelines").value,content})});
+  if(!res.ok) throw new Error("Server returned "+res.status);
+  latestResponse=await res.json(); findings=latestResponse.findings||[];decisions={};
+  renderFindings();saveReview();
+ }catch(e){toast("Could not check content. Ensure the Java app is running, then try again.");console.error(e);}
+ finally{$("checkBtn").disabled=false;$("checkBtn").textContent="Check content →";}
+});
+function renderFindings(){
+ const supported=findings.filter(f=>f.status==="Supported").length;
+ const unsupported=findings.filter(f=>f.status==="Unsupported").length;
+ const review=findings.filter(f=>f.status==="Needs Human Review").length;
+ $("stats").style.display="flex";
+ $("stats").innerHTML=`<div class="stat"><b>${latestResponse?.sentenceCount??findings.length}</b><span>Sentences checked</span></div><div class="stat"><b>${supported}</b><span>Supported matches</span></div><div class="stat"><b>${unsupported}</b><span>Unsupported</span></div><div class="stat"><b>${review}</b><span>Needs review</span></div>`;
+ if(!findings.length){$("results").innerHTML='<div class="empty">No non-empty sentences found.</div>';return;}
+ $("results").innerHTML=findings.map((f,i)=>`<article class="finding ${decisions[i]?'resolved':''}" id="finding-${i}"><div class="finding-title"><strong>Finding ${i+1}</strong><span class="status ${statusClass(f.status)}">${esc(f.status)}</span></div><div class="statement">“${esc(f.statement)}”</div><p><strong>Why flagged:</strong> ${esc(f.reason)}</p><p><strong>Evidence:</strong> ${esc(f.evidence)}</p><p><strong>Suggested action:</strong> ${esc(f.suggestion)}</p><div class="actions"><button class="secondary small" onclick="decide(${i},'Accepted')">✓ Accept</button><button class="secondary small" onclick="editFinding(${i})">✎ Edit</button><button class="secondary small" onclick="decide(${i},'Dismissed')">Dismiss</button><span class="hint" id="decision-${i}" style="align-self:center">${decisions[i]?'Decision: '+esc(decisions[i]):'Decision pending'}</span></div></article>`).join("");
+}
+function decide(i,choice){decisions[i]=choice;const el=$("finding-"+i);if(el){el.classList.add("resolved");$("decision-"+i).textContent="Decision: "+choice;}saveReview();toast("Decision saved: "+choice);}
+function editFinding(i){const current=findings[i].statement;const revised=prompt("Edit the statement. Save to record your human-reviewed version:",current);if(revised===null)return;if(!revised.trim()){toast("Edited statement cannot be empty.");return;}findings[i].editedStatement=revised.trim();decisions[i]="Edited";const el=$("finding-"+i);el.classList.add("resolved");$("decision-"+i).textContent="Decision: Edited";const q=el.querySelector(".statement");q.textContent="“"+revised.trim()+"”";saveReview();toast("Edited version saved in review record.");}
+function saveReview(){
+ const item={date:new Date().toISOString(),draft:$("draft").value.trim(),findings:findings.map((f,i)=>({...f,decision:decisions[i]||"Pending",editedStatement:f.editedStatement||null})),approvedFacts:$("facts").value,guidelines:$("guidelines").value};
+ if(!item.draft)return;
+ historyItems.unshift(item);historyItems=historyItems.slice(0,20);localStorage.setItem("prooftrail-history",JSON.stringify(historyItems));renderHistory();
+}
+function renderHistory(){
+ if(!historyItems.length){$("history").innerHTML='<div class="empty">Completed reviews will appear here.</div>';return;}
+ $("history").innerHTML=historyItems.slice(0,8).map((h,i)=>`<div class="history-row"><div><strong>${esc(h.draft.slice(0,62))}${h.draft.length>62?'…':''}</strong><div class="hint">${new Date(h.date).toLocaleString()} · ${h.findings.length} findings</div></div><button class="secondary small" onclick="loadHistory(${i})">Open</button></div>`).join("");
+}
+function loadHistory(i){const h=historyItems[i];if(!h)return;$("draft").value=h.draft;$("facts").value=h.approvedFacts||"";$("guidelines").value=h.guidelines||"";findings=h.findings;decisions={};findings.forEach((f,j)=>{if(f.decision&&f.decision!=="Pending")decisions[j]=f.decision;});latestResponse={sentenceCount:findings.length,findings};renderFindings();toast("Review loaded.");}
+$("clearHistoryBtn").addEventListener("click",()=>{if(confirm("Clear saved review history from this browser?")){historyItems=[];localStorage.removeItem("prooftrail-history");renderHistory();toast("History cleared.");}});
+$("exportBtn").addEventListener("click",()=>{
+ if(!findings.length){toast("Run a check first.");return;}
+ const report={product:"PROOFTRAIL",exportedAt:new Date().toISOString(),approvedFacts:$("facts").value,guidelines:$("guidelines").value,draft:$("draft").value,findings:findings.map((f,i)=>({...f,decision:decisions[i]||"Pending"})),note:latestResponse?.note};
+ const blob=new Blob([JSON.stringify(report,null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="prooftrail-review.json";a.click();URL.revokeObjectURL(url);
+});
+renderHistory();
+</script>
+</body>
+</html>
